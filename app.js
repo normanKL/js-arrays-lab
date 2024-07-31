@@ -270,3 +270,47 @@ for (let index = 0; index < numArrays.length; index++) {
 }
 
 console.log('Exercise 15 result:\n', total);
+
+//Exercise 16:
+/* Write a function checkExists that checks if an element exists in an array. It should return true if the element exists, and false otherwise
+e.g. checkExists(10, [1, 3, 6, 10, 11]) -> returns true
+e.g. checkExists("hello", ["bye", "cya", "so long"]) -> returns false*/
+
+
+function checkExists(element, array) {
+    return array.includes(element)
+}
+
+console.log('Exercise 16 result:', checkExists(10, [1, 3, 6, 10, 11]));
+console.log('Exercise 16 result:', checkExists("hello", ["bye", "cya", "so long"]));
+
+//Exercise 17:
+/* Write a function reverseString, that reverses the string provided and returns it:
+e.g. reverseString("hello").-> olleh*/
+
+// split('') - splits the string into an array of individual characters
+// reverse() - reverse the order of element in the array 
+// join('') - joins the elements of the array back into a single string  
+
+function reverseString(a) {
+    return a.split('').reverse().join('')
+}
+
+console.log('Exercise 17 result:', reverseString('hello'));
+
+//Exercise 18:
+// Write a function isPalindrome that returns true if the given string is a palindrome, false otherwise. A palindrome is a string, that when reversed, is the same string.
+// e.g. reverseString('radar') -> true
+// e.g. reverseString('sos') -> true
+// e.g. reverseString('zombie') -> false 
+
+function isPalindrome(string) {
+    const reverseString = string.split('').reverse().join('')
+    return string === reverseString
+}
+
+console.log('Exercise 18 result:', isPalindrome('radar'));
+console.log('Exercise 18 result:', isPalindrome('sos'));
+console.log('Exercise 18 result:', isPalindrome('zombie'));
+
+
