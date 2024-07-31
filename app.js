@@ -259,7 +259,7 @@ Hint: Be sure to declare and initialize the total variable before the iterations
 Complete Exercise 15 in the space below:
 */
 
-// cannot use const because the total variable will change, use let instead 
+// !!!cannot use const because the total variable will change, use let instead 
 
 let total = 0
 
