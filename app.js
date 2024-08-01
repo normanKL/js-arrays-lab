@@ -187,6 +187,21 @@ Exercise 12: FizzBuzz with arrays
 Complete Exercise 12 in the space below:
 */
 
+
+/* 
+Nick's Feedback: 
+For question 12: Let's look at the if else inside your Fizzbuzz with arrays. 
+if (num % 3 === 0) { fizz.push(num) } else if (num % 5 === 0) { buzz.push(num) } else if (num % 3 === 0 && num % 5 === 0) { fizzbuzz.push(num) } 
+A couple of things about this. - Firstly, whenever you're writing an if else, the most specific conditions should go at the top. 
+In this case, your fizzbuzz condition is the most specific, so it should come first. 
+If you don't do this, this condition will actually never run (as the fizz condition is always true when fizzbuzz is), and you'll end up with an empty fizzbuzz array! 
+If you switch the order, fizzbuzz array will contain 15, 45, 90. - 
+Secondly, the question would look you to push numbers to all the relevant arrays, not just the most specific one. 
+For example, 15 should go in fizz, buzz, and fizzbuzz arrays. You can't achieve this with an if else, because it only ever runs one branch at a time. 
+You need 3 separate if statements, like the below: 
+if (num % 3 === 0 && num % 5 === 0) { fizzbuzz.push(num) } if (num % 3 === 0) { fizz.push(num) } if (num % 5 === 0) { buzz.push(num) } 
+*/
+
 const fizz = []
 const buzz = []
 const fizzbuzz = []
@@ -194,12 +209,12 @@ const fizzbuzz = []
 for (let index = 0; index < nums.length; index++) {
     const num = nums[index]
 
-    if (num % 3 === 0) {
-        fizz.push(num)
-    } else if (num % 5 === 0) {
-        buzz.push(num)
-    } else if (num % 3 === 0 && num % 5 === 0) {
+    if (num % 3 === 0 && num % 5 === 0) {
         fizzbuzz.push(num)
+    } if (num % 5 === 0) {
+        buzz.push(num)
+    } if (num % 3 === 0) {
+        fizz.push(num)
     }
 }
 
@@ -260,6 +275,13 @@ Complete Exercise 15 in the space below:
 */
 
 // !!!cannot use const because the total variable will change, use let instead 
+
+/*
+Nick's Feedback: You're correct that in this situation, you need to use let, because you need to reassign the total as you're looping. 
+In general, you want to prefer const over let, as it's more predictable to understand for developers (as you can't reassign it). 
+However, sometimes you won't be able to avoid reassigning, such as in this situation where you need to update a sum. 
+And so that's when you want to use let, just like you did here. 
+*/
 
 let total = 0
 
